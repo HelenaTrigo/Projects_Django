@@ -1,5 +1,5 @@
 from django import forms
-from todo.models import Tarefa
+from toDo.models import Tarefa
 
 class TarefaForm(forms.ModelForm):
     class Meta: 
