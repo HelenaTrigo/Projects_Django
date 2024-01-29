@@ -9,5 +9,3 @@ class Tarefa(models.Model):
     def __str__(self) -> str:
         return self.nome
     
-    class Meta:
-        ordering = [nome]

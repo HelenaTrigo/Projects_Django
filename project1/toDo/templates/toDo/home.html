@@ -7,5 +7,17 @@
 </head>
 <body>
   <h1>Lista de Tarefas</h1>  
+  <p>{{numero}} tarefa</p>
+
+  <ul>
+    {% for x in tarefas:}
+    <li>{{x.id}} - {{x.nome}}
+      <a href="{% url}"></a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <br>
+  <a href="{% url 'toDo'}"></a>
 </body>
 </html>
