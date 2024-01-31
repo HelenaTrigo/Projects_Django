@@ -23,5 +23,5 @@ urlpatterns = [
     path('todo/', include('toDo.urls')),
     path('app1/', include('app1.urls')),
     path('admin/', admin.site.urls),
-    path('lista_compras', include('lista_compras.urls')),
+    path('lista_compras/', include('lista_compras.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
