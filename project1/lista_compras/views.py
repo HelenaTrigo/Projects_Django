@@ -8,4 +8,4 @@ def home(request):
     # obter dados do Modelo
     artigos = Artigo.objects.all()
     
-    return render(request, 'lista_compras/home.html')
+    return render(request, 'lista_compras/home.html', {'artigos':artigos})
