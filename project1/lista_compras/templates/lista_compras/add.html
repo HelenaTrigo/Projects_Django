@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 3</title>
+</head>
+<body>
+    <h1>Adicionar artigo</h1>
+    <form method = "POST">
+        {% csrf_token %}
+
+        <!-- mostra o formulário separado por parágrafos-->
+        {{formulario.as_p}}
+         <p><button type="submit">Adicionar</button></p>
+    </form>
+   
+</body>
+</html>
