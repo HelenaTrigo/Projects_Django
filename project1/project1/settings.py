@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'app1',
     'toDo',
     'lista_compras',
-    
+    'contacts',
 ]
 
 MIDDLEWARE = [
