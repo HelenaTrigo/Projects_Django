@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
@@ -7,13 +9,16 @@
 </head>
 <body>
     <h1>Lista de Compras</h1>
-<ul>
-    {% for artigo in artigos %}
+    <ul>
+        {% for artigo in artigos %}
 
-    <li>{{artigo}} </li>
+        <li>{{artigo}} <a href="{% url 'lista_compras:delete' artigo.id %}"><img src="{% static 'trash3.svg' %}" alt="caixote do lico - eliminar"></a></li>
     
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
    
+    <a href="{% url 'lista_compras:add' %}">Adicionar artigo 
+        <img src="{% static 'add.svg' %}" alt="mais - adicionar">
+    </a>
 </body>
 </html>

@@ -23,7 +23,7 @@ def add(request):
 
 def delete(request, id):
     try:
-        artigo1 = Artigo.objects.get(pk == id)
+        artigo1 = Artigo.objects.get(pk = id)
         artigo1.delete()
     except:
         return HttpResponse("<p>Ocorreu um erro. Artigo não encontrado.<\p>")
