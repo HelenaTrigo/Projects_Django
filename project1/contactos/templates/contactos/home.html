@@ -9,7 +9,18 @@
     <h1>Lista de Contactos</h1>
 
     {% for contacto in contactos %}
-        <p>{{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}</p>
+    <div>
+        <p>
+            {% if contacto.foto %}
+            <img src="{{contacto.foto.url}}" width="50">
+            {% endif %}
+            {{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}
+            {% if contacto.telemovel2 %}
+            Tlm alternativo: {{contacto.telemovel2}}
+            {% endif %}
+            <a href="{% url ' contactos:delete' contacto.id}"></a><img src="../../../static/trash3.svg" alt="">
+        </p>
+    </div>
     {% endfor %}
 </body>
 </html>
