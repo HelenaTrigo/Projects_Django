@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Lista de Contactos</h1>
+    <a href="{% url 'contactos:add' %}">Adicionar contacto<img src="../../../static/add.svg" alt=""></a>
 
     {% for contacto in contactos %}
     <div>
@@ -14,13 +15,16 @@
             {% if contacto.foto %}
             <img src="{{contacto.foto.url}}" width="50">
             {% endif %}
-            {{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}
+            <a href="{% url 'contactos:delete' contacto.id %}"><img src="../../../static/trash3.svg" alt="caixote do lixo"></a>
+            <a href="{% url 'contactos:edit' contacto.id %}"><img src="../../../static/pencil-fill.svg" alt="lápis - editar"></a><br>
+            {{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}<br>
             {% if contacto.telemovel2 %}
-            Tlm alternativo: {{contacto.telemovel2}}
+                Tlm alternativo: {{contacto.telemovel2}}
             {% endif %}
-            <a href="{% url ' contactos:delete' contacto.id}"></a><img src="../../../static/trash3.svg" alt="">
         </p>
     </div>
     {% endfor %}
+
+   
 </body>
 </html>
