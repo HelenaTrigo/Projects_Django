@@ -29,7 +29,7 @@ def edit(request, id):
     try:
         contacto = Contacto.objects.get(pk = id)
     except:
-        return HttpResponse("Erro: o contacto não existe. Será redircionado para nova página em 5 segundos.")
+        return HttpResponse("Erro: o contacto não existe.")
         # em html redirediona para pagina no tempo definido <meta http-equiv="refresh" content="5; URL={% url 'contactos:home' %}"/>
        
     else:
