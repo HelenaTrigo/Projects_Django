@@ -1,3 +1,4 @@
+{%extends 'contactos/base.html' %}
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
@@ -6,25 +7,28 @@
     <title>Contactos</title>
 </head>
 <body>
-    <h1>Lista de Contactos</h1>
-    <a href="{% url 'contactos:add' %}">Adicionar contacto<img src="../../../static/add.svg" alt=""></a>
+    <main>
+    {% block conteudo %}
+        <h2>Lista de Contactos</h2>
+        <a href="{% url 'contactos:add' %}">Adicionar contacto<img src="../../../static/add.svg" alt=""></a>
 
-    {% for contacto in contactos %}
-    <div>
-        <p>
-            {% if contacto.foto %}
-            <img src="{{contacto.foto.url}}" width="50">
-            {% endif %}
-            <a href="{% url 'contactos:delete' contacto.id %}"><img src="../../../static/trash3.svg" alt="caixote do lixo"></a>
-            <a href="{% url 'contactos:edit' contacto.id %}"><img src="../../../static/pencil-fill.svg" alt="lápis - editar"></a><br>
-            {{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}<br>
-            {% if contacto.telemovel2 %}
-                Tlm alternativo: {{contacto.telemovel2}}
-            {% endif %}
-        </p>
-    </div>
-    {% endfor %}
+        {% for contacto in contactos %}
+        <div>
+            <p>
+                {% if contacto.foto %}
+                <img src="{{contacto.foto.url}}" width="50">
+                {% endif %}
+                <a href="{% url 'contactos:delete' contacto.id %}"><img src="../../../static/trash3.svg" alt="caixote do lixo"></a>
+                <a href="{% url 'contactos:edit' contacto.id %}"><img src="../../../static/pencil-fill.svg" alt="lápis - editar"></a><br>
+                {{contacto.nome}} - {{contacto.telemovel}} | {{contacto.email}}<br>
+                {% if contacto.telemovel2 %}
+                    Tlm alternativo: {{contacto.telemovel2}}
+                {% endif %}
+            </p>
+        </div>
+        {% endfor %}
 
-   
+    {% endblock %}
+</main>
 </body>
 </html>

@@ -1,3 +1,4 @@
+{%extends 'contactos/base.html' %}
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
@@ -6,7 +7,8 @@
     <title>App Contacto - Editar</title>
 </head>
 <body>
-    <h1>Editar contacto</h1>
+   {% block conteudo %}
+    <h2>Editar contacto</h2>
     <form method="POST" enctype="multipart/form-data">
  
         {% csrf_token %}
@@ -15,5 +17,6 @@
        
         <p><button>Guardar alterações</button></p>
     </form>
+    {% endblock %}
 </body>
 </html>
