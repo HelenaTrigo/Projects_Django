@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'toDo',
     'lista_compras',
     'contactos',
+    'mostrar_api',
 ]
 
 MIDDLEWARE = [
