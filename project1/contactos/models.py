@@ -27,3 +27,4 @@ class Contacto(models.Model):
     class Meta:
         ordering = ['nome']
 
+
